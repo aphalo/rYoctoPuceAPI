@@ -31,7 +31,7 @@ installed and running on the computer or microcontroller board where the
 USB modules are plugged in.
 
 ``` r
-library(yoctopuce)
+library(rYoctoPuveAPI)
 ```
 
 Python and the Python ‘yoctopuce’ library have to be installed on the
@@ -178,8 +178,7 @@ citation("yoctopuce")
 #> To cite package 'yoctopuce' in publications use:
 #> 
 #>   Aphalo P (2024). _yoctopuce: YoctoPuce USB modules_. R package
-#>   version 0.1.1, https://docs.r4photobiology.info/yoctopuce,
-#>   <https://github.com/aphalo/yoctopuce>.
+#>   version 0.1.1, <https://github.com/aphalo/yoctopuce>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
@@ -187,13 +186,13 @@ citation("yoctopuce")
 #>     title = {yoctopuce: YoctoPuce USB modules},
 #>     author = {Pedro J. Aphalo},
 #>     year = {2024},
-#>     note = {R package version 0.1.1, https://docs.r4photobiology.info/yoctopuce},
+#>     note = {R package version 0.1.1},
 #>     url = {https://github.com/aphalo/yoctopuce},
 #>   }
 ```
 
 ## License
 
-© 2024 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under the
-GPL, version 2 or greater. This software carries no warranty of any
+© 2024-2026 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+the GPL, version 2 or greater. This software carries no warranty of any
 kind.

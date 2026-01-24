@@ -16,8 +16,8 @@ knitr::opts_chunk$set(
 # yoctopuce
 
 <!-- badges: start -->
-[![yoctopuce status badge](https://aphalo.r-universe.dev/badges/yoctopuce)](https://aphalo.r-universe.dev/yoctopuce)
-[![web site](https://img.shields.io/badge/documentation-yoctopuce-informational.svg)](https://docs.r4photobiology.info/yoctopuce/)
+[![yoctopuce status badge](https://aphalo.r-universe.dev/badges/rYoctoPuceAPI)](https://aphalo.r-universe.dev/rYoctoPuceAPI)
+[![web site](https://img.shields.io/badge/documentation-rYoctoPuceAPI-informational.svg)](https://docs.r4photobiology.info/rYoctoPuceAPI/)
 <!-- badges: end -->
 
 ## Purpose
@@ -29,7 +29,7 @@ knitr::opts_chunk$set(
 If using a virtual hub instead of a hardware one, the [VirtualHub software](https://www.yoctopuce.com/EN/virtualhub.php) should be installed and running on the computer or microcontroller board where the USB modules are plugged in.
 
 ```{r, eval=FALSE}
-library(yoctopuce)
+library(rYoctoPuceAPI)
 ```
 Python and the Python 'yoctopuce' library have to be installed on the computer where the R code will run. The library is installed in a separate Python environment `r-yoctopuce', that is used only by R package 'yoctopuce'. This is to avoid interfering with other local uses of Python. Installation, of course, needs to be done only once.
 
@@ -76,7 +76,7 @@ To use this package you will need to have at least one USB module from Yoctopuce
 Installation of the current unstable version from a CRAN-like repository at R-Universe (Binaries for Mac, Win, WebAssembly, and Linux, as well as sources available) is possible by explicitly listing the repository (as shown) or by adding the `https://aphalo.r-universe.dev` repository to the repositories known to R:
 
 ```{r universe-installation, eval=FALSE}
-install.packages('yoctopuce', 
+install.packages('rYoctoPuceAPI', 
                  repos = c('https://aphalo.r-universe.dev', 
                            'https://cloud.r-project.org'))
 ```
@@ -85,28 +85,28 @@ Installation of the current unstable version from GitHub (from sources) is also 
 
 ```{r gh-instalaltion, eval=FALSE}
 # install.packages("devtools")
-devtools::install_github("aphalo/yoctopuce")
+devtools::install_github("aphalo/rYoctoPuceAPI")
 ```
 
 ## Documentation
 
-HTML documentation is available at (https://docs.r4photobiology.info/yoctopuce/), including one vignette and one article.
+HTML documentation is available at (https://docs.r4photobiology.info/rYoctoPuceAPI/), including one vignette and one article.
 
 News about updates are regularly posted at (https://www.r4photobiology.info/).
 
 ## Contributing
 
-Please report bugs and request new features at (https://github.com/aphalo/yoctopuce/issues). Pull requests are welcome at (https://github.com/aphalo/yoctopuce).
+Please report bugs and request new features at (https://github.com/aphalo/rYoctoPuceAPI/issues). Pull requests are welcome at (https://github.com/aphalo/rYoctoPuceAPI).
 
 ## Citation
 
 If you use this package to produce scientific or commercial publications, please cite according to:
 
 ```{r}
-citation("yoctopuce")
+citation("rYoctoPuceAPI")
 ```
 
 ## License
 
-© 2024 Pedro J. Aphalo (pedro.aphalo@helsinki.fi). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
+© 2024-2026 Pedro J. Aphalo (pedro.aphalo@helsinki.fi). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
 
