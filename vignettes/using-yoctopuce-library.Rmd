@@ -17,3 +17,46 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(rYoctoPuceAPI)
 ```
+
+Python and the Python 'yoctopuce' library have to be installed on the computer where the R code will run. The library is installed in a separate Python environment `r-yoctopuce', that is used only by R package 'yoctopuce'. This is to avoid interfering with other local uses of Python. Installation, of course, needs to be done only once.
+
+```{r, eval=FALSE}
+install_python()
+install_yoctopuce()
+```
+
+## First steps
+
+See the ['yoctopuce' Python library documentation](https://www.yoctopuce.com/EN/doc/reference/yoctolib-php-EN.html) for details. Be aware that the imports into R are done by `"function"` name, not by USB module name. Some USB modules support more than one "function" and multiple USB modules that are logically equivalent normally support the same "function". Say for both YoctoRelay and YoctoPowerRelay USB modules the import is the same `yocto_relay`, while for YoctoMeteo with its different "functions", three imports are needed to be able to use all of them, as shown in the example below. Additional imports would be needed to access the data logger built into the YoctoMeteo module.
+
+## YoctoRelay
+
+On each R session where communication with Yoctopuce modules is needed, the library has to be imported and registered. Based on the USB module being targeted we import Python library modules to make them available in R and register the hub (virtual or hardware) that will be used to connect to the modules. The example below assumes we will use a **YoctoRelay** through a local instance of the virtual hub.
+
+```{r, eval=FALSE}
+y_initialise("yocto_relay")
+ls(pattern = "^yocto")
+```
+
+The first line of code above creates R objects giving access to the functions and objects from the Python library using `$` notation. However, one needs first to find the module one intends to use and create a wrapper object. The serial number plus "function" name within the module or an user-assigned "logical" name of the module "function", is used to locate it. Here we use `"RELAY1"`, the name of the first of two relays ("functions") in our YoctoRelay module. When using default names, only one module of a given type can be used. With multiple identical modules, either names should be changed to unique ones, or serial numbers used. Using default names makes the code usable unchanged with any Yoctopuce module of a given type, while using different names or serial numbers makes it possible to individually access multiple modules of the same type through the same hub.
+
+```{r, eval=FALSE}
+Relay1 <- yocto_relay$YRelay$FindRelay("RELAY1")
+# in case of failure the Python error message is displayed
+
+# we can check the serial number of the found relay
+Relay1$describe()
+Relay1$get_functionId()
+
+# We can then, for example, flip the relay switch to ON ("B") state for 200 ms
+Relay1$pulse(200)
+```
+
+## YoctoMeteo
+
+The YoctoMeteo module has three functions, for the measurement of three different meteorological variables.
+
+```{r, eval=FALSE}
+init_yoctopuce("yocto_api", "yocto_humidity", "yocto_temperature", "yocto_pressure")
+ls(pattern = "^yocto")
+```
