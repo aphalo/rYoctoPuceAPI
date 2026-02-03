@@ -21,7 +21,7 @@ For these examples I set the function names through the webapp before running th
 If using a virtual hub instead of a hardware one, the [VirtualHub software](https://www.yoctopuce.com/EN/virtualhub.php) should be installed and running on the computer or microcontroller board where the USB modules are plugged in.
 
 ```{r setup}
-library(yoctopuce)
+library(rYoctoPuceAPI)
 ```
 
 Python and the Python 'yoctopuce' library have to be installed on the computer where the R code will run. The library is installed in a separate Python environment `r-yoctopuce', that is used only by R package 'yoctopuce'. This is to avoid interfering with other uses of Python. Installation, of course, needs to be done only once.
@@ -36,7 +36,7 @@ On each R session where communication with yoctopuce modules is needed, the libr
 See the [library documentation](https://www.yoctopuce.com/EN/doc/reference/yoctolib-php-EN.html) for details. Be aware that the imports are done by Python library module name, not by YoctoPuce hardware module name. For both the **Yocto-Relay** and **Yocto-PowerRelay-V2** modules the import needed is the same `yocto_relay`.
 
 ```{r initialise-relay}
-y_initialise("yocto_relay")
+init_yoctopuce("yocto_relay")
 ls(pattern = "^yocto")
 ```
 This creates R objects `yocto_api`, `yocto_humidity`, `yocto_temperature`, `yocto_pressure` giving access to the functions and objects from the Python library using `$` notation. However, one needs first to find the module one intends to use and create a wrapper object. The serial number plus "function" within the module or an user-assigned name of the module "function", is used to locate it. Here we use `"RELAY1"`, the default name of the first of two relays ("functions") in the **Yocto-Relay** module. When using default names, only one module of a given type can be used. With multiple identical modules, either names should be changed to unique ones, or serial numbers used.

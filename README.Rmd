@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# yoctopuce
+# rYoctoPuceAPI (formerly 'yoctopuce')
 
 <!-- badges: start -->
 [![yoctopuce status badge](https://aphalo.r-universe.dev/badges/rYoctoPuceAPI)](https://aphalo.r-universe.dev/rYoctoPuceAPI)

@@ -1,12 +1,12 @@
 
-# yoctopuce
+# rYoctoPuceAPI (formerly ‘yoctopuce’)
 
 <!-- badges: start -->
 
 [![yoctopuce status
-badge](https://aphalo.r-universe.dev/badges/yoctopuce)](https://aphalo.r-universe.dev/yoctopuce)
+badge](https://aphalo.r-universe.dev/badges/rYoctoPuceAPI)](https://aphalo.r-universe.dev/rYoctoPuceAPI)
 [![web
-site](https://img.shields.io/badge/documentation-yoctopuce-informational.svg)](https://docs.r4photobiology.info/yoctopuce/)
+site](https://img.shields.io/badge/documentation-rYoctoPuceAPI-informational.svg)](https://docs.r4photobiology.info/rYoctoPuceAPI/)
 <!-- badges: end -->
 
 ## Purpose
@@ -31,7 +31,7 @@ installed and running on the computer or microcontroller board where the
 USB modules are plugged in.
 
 ``` r
-library(rYoctoPuveAPI)
+library(rYoctoPuceAPI)
 ```
 
 Python and the Python ‘yoctopuce’ library have to be installed on the
@@ -139,7 +139,7 @@ shown) or by adding the `https://aphalo.r-universe.dev` repository to
 the repositories known to R:
 
 ``` r
-install.packages('yoctopuce', 
+install.packages('rYoctoPuceAPI', 
                  repos = c('https://aphalo.r-universe.dev', 
                            'https://cloud.r-project.org'))
 ```
@@ -150,14 +150,14 @@ unless a branch different from `main` or an older commit is the target:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("aphalo/yoctopuce")
+devtools::install_github("aphalo/rYoctoPuceAPI")
 ```
 
 ## Documentation
 
 HTML documentation is available at
-(<https://docs.r4photobiology.info/yoctopuce/>), including one vignette
-and one article.
+(<https://docs.r4photobiology.info/rYoctoPuceAPI/>), including one
+vignette and one article.
 
 News about updates are regularly posted at
 (<https://www.r4photobiology.info/>).
@@ -165,8 +165,8 @@ News about updates are regularly posted at
 ## Contributing
 
 Please report bugs and request new features at
-(<https://github.com/aphalo/yoctopuce/issues>). Pull requests are
-welcome at (<https://github.com/aphalo/yoctopuce>).
+(<https://github.com/aphalo/rYoctoPuceAPI/issues>). Pull requests are
+welcome at (<https://github.com/aphalo/rYoctoPuceAPI>).
 
 ## Citation
 
@@ -174,20 +174,20 @@ If you use this package to produce scientific or commercial
 publications, please cite according to:
 
 ``` r
-citation("yoctopuce")
-#> To cite package 'yoctopuce' in publications use:
+citation("rYoctoPuceAPI")
+#> To cite package 'rYoctoPuceAPI' in publications use:
 #> 
-#>   Aphalo P (2024). _yoctopuce: YoctoPuce USB modules_. R package
-#>   version 0.1.1, <https://github.com/aphalo/yoctopuce>.
+#>   Aphalo P (2026). _rYoctoPuceAPI: YoctoPuce USB modules_. R package
+#>   version 0.1.1, <https://github.com/aphalo/rYoctoPuceAPI>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
 #>   @Manual{,
-#>     title = {yoctopuce: YoctoPuce USB modules},
+#>     title = {rYoctoPuceAPI: YoctoPuce USB modules},
 #>     author = {Pedro J. Aphalo},
-#>     year = {2024},
+#>     year = {2026},
 #>     note = {R package version 0.1.1},
-#>     url = {https://github.com/aphalo/yoctopuce},
+#>     url = {https://github.com/aphalo/rYoctoPuceAPI},
 #>   }
 ```
 
